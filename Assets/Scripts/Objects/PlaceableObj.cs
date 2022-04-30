@@ -12,16 +12,14 @@ public class PlaceableObj : MonoBehaviour
     private float threshold;
     private float cameraMin;
 
-    private void Start()
+    protected virtual void Start()
     {
         GameManager.Instance.grid.SetObject(position.x, position.y, this);
-        transform.position = GameManager.Instance.grid.GetWorldPosition(position.x, position.y)+Vector3.one*0.5f * GameManager.Instance.grid.cellsize;
     }
-    private void Update()
+    protected virtual void Update()
     {
         DeleteOffMapUnits();
     }
-
     private void DeleteOffMapUnits()
     {
         cameraMin = GameManager.Instance.cam.ViewportToWorldPoint(new Vector3(0, 0, GameManager.Instance.cam.nearClipPlane)).x;
