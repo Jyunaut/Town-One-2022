@@ -11,7 +11,7 @@ public class Grid<T>
     public int width, height;
     public Vector3 origin;
     public T[,] grid;
-    public bool debugLines;
+    public bool debugLines=true;
 
     public Grid(int w, int h, float c, Vector3 o, Func<Grid<T>, int, int, T> CreateGridObject)
     {

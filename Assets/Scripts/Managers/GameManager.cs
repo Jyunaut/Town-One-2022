@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-<<<<<<< HEAD
+
     public Camera cam;
 
     [field: Header("Grid data")]
-    public Grid<GridObject> grid;
-=======
     public Grid<PlaceableObj> grid;
->>>>>>> zehao-dev
+
     public int gridWidth;
     public int gridHeight;
     public float gridCellSize;

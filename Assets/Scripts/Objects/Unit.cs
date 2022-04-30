@@ -67,6 +67,17 @@ public class Unit : PlaceableObj
 
     private void Update()
     {
-
+        timer += Time.deltaTime;
+        if (timer >= attackSpeed)
+        {
+            var target = getTarget();
+            if (target != null)
+            {
+                Debug.Log("target found");
+                putOutFire(target);
+            }
+            timer = 0.0f;
+        }
+        
     }
 }
