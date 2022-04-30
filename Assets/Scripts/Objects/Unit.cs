@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class Unit : PlaceableObj
 {
 
-    Vector2Int pos;
-    Direction dir;
-    int attck;
 
-    enum Direction {left,right,up,down};
-    Vector2Int position;
+    public int attack;
+    public float attackSpeed =1.0f;
+    public float timer=0.0f;
+
     Vector2Int getDirVec(Direction dir)
     {
         switch (dir)
@@ -56,7 +55,7 @@ public class Unit : MonoBehaviour
 
     void putOutFire(Damageable fire)
     {
-        fire.receiveDamage(attck);
+        fire.receiveDamage(attack);
     }
 
     void rotate(Direction dir)
@@ -68,10 +67,6 @@ public class Unit : MonoBehaviour
 
     private void Update()
     {
-        var target = getTarget();
-        if (target!=null)
-        {
-            putOutFire(target);
-        }
+
     }
 }

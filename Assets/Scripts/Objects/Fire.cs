@@ -5,12 +5,19 @@ using UnityEngine;
 public class Fire : PlaceableObj, Damageable
 {
     int hp;
-    int maxHP;
-    FireData data;
+    public FireData data;
+    HealthBar healthBar;
 
     delegate void damageHandler(int cur, int max);
     event damageHandler onDamaged;
-    
+
+    private void Awake()
+    {
+        hp = MaxHP;
+        healthBar = GetComponent<HealthBar>();
+        onDamaged += healthBar.changeHealthBar;
+    }
+
     public int HP {
         get
         {
@@ -33,6 +40,7 @@ public class Fire : PlaceableObj, Damageable
 
     public void onDeath()
     {
+        Debug.Log("you died");
         return;
     }
 
@@ -44,6 +52,8 @@ public class Fire : PlaceableObj, Damageable
         {
             onDeath();
         }
+        Debug.Log("HP: " + hp);
+        hp = currHp;
         return currHp;
     }
 }
