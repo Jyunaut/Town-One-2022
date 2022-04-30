@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public Vector3 gridOrigin;
     [field: Header("Unit Deletion data")]
     public float threshold;
+    [field: Header("Fire spawning data")]
+    public int min;
+    public int max;
+    public PlaceableObj FirePrefab;
 
     private void Awake()
     {
@@ -25,5 +29,21 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         grid = new Grid<PlaceableObj>(gridWidth, gridHeight, gridCellSize, gridOrigin, (Grid<PlaceableObj> g, int x, int y) => new PlaceableObj());
+        SpawnFires();
+    }
+
+    private void SpawnFires()
+    {
+        if(min < 0 || max > gridWidth)
+            return;
+
+        for (int x = min; x < max; x++)
+        {
+            for (int y = 0; y < gridHeight; y++)
+            {
+                grid.SetObject(x, y, FirePrefab);
+                Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
+            }
+        }
     }
 }
