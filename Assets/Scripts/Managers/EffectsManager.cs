@@ -18,7 +18,6 @@ public class EffectsManager : MonoBehaviour
         _camera = FindObjectOfType<Camera>();
     }
 
-    private Coroutine _screenShake;
     public Coroutine ScreenShake(float xMagnitude, float yMagnitude, float frequency, float duration)
     {
         if (duration <= 0f || (xMagnitude == 0f && yMagnitude == 0f) || frequency <= 0f)

@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public int gridHeight;
     public float gridCellSize;
     public Vector3 gridOrigin;
-    
     [field: Header("Unit Deletion data")]
     public float threshold;
 
