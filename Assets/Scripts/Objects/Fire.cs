@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fire : PlaceableObj, Damageable
 {
-    int hp;
+    public int hp;
     public FireData data;
     HealthBar healthBar;
 
@@ -41,6 +41,7 @@ public class Fire : PlaceableObj, Damageable
     public void onDeath()
     {
         Debug.Log("you died");
+        Destroy(this.gameObject);
         return;
     }
 
