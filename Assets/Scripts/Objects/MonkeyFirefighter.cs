@@ -64,9 +64,19 @@ public class MonkeyFirefighter : PlaceableObj
     {
         base.Start();
     }
-
     protected override void Update()
     {
         base.Update();
+        timer += Time.deltaTime;
+        if (timer >= attackSpeed)
+        {
+            var target = getTarget();
+            if (target != null)
+            {
+                Debug.Log("target found");
+                putOutFire(target);
+            }
+            timer = 0.0f;
+        }
     }
 }

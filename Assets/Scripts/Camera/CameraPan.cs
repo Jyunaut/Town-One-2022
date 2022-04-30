@@ -11,7 +11,6 @@ public class CameraPan : MonoBehaviour
     private void Start()
     {
         ReachedEnd = false;
-        StartPan();
     }
 
     public Coroutine StartPan()

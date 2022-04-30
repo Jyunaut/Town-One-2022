@@ -10,7 +10,11 @@ public class Grid<T>
     public int width, height;
     public Vector3 origin;
     public T[,] grid;
+<<<<<<< HEAD
+    public bool debugLines=true;
+=======
     public bool debugLines = true;
+>>>>>>> a1bda418572b72645cf0f981980ffa3ef8711e2a
 
     public Grid(int w, int h, float c, Vector3 o, Func<Grid<T>, int, int, T> CreateGridObject)
     {
