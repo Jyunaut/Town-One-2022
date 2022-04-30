@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GridObject { enum Type { fire, turret } }
+public class GridObject { }
 public class Grid<T>
 {
     public int x, y;
