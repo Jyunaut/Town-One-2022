@@ -92,6 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dir: 1
   position: {x: 1, y: 0}
+  hp: 100
   data: {fileID: 11400000, guid: 5589306de0ad8445aa5d2329f1858e0c, type: 2}
 --- !u!212 &6195423276209318046
 SpriteRenderer:
