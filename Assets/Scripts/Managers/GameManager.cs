@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public int gridHeight;
     public float gridCellSize;
     public Vector3 gridOrigin;
+    //comment by William
 
     private void Awake()
     {
