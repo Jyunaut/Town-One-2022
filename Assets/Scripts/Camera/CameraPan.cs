@@ -21,7 +21,7 @@ public class CameraPan : MonoBehaviour
         {
             while (!ReachedEnd)
             {
-                transform.position += new Vector3(_panSpeed * Time.deltaTime, transform.position.y);
+                transform.position = new Vector3(transform.position.x + _panSpeed * Time.deltaTime, transform.position.y);
                 yield return null;
             }
         }

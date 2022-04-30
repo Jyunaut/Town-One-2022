@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public Camera cam;
-
     [field: Header("Grid data")]
     public Grid<PlaceableObj> grid;
 

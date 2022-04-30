@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class GridObject { }
 public class Grid<T>
 {
     public int x, y;
@@ -11,7 +10,11 @@ public class Grid<T>
     public int width, height;
     public Vector3 origin;
     public T[,] grid;
+<<<<<<< HEAD
     public bool debugLines=true;
+=======
+    public bool debugLines = true;
+>>>>>>> a1bda418572b72645cf0f981980ffa3ef8711e2a
 
     public Grid(int w, int h, float c, Vector3 o, Func<Grid<T>, int, int, T> CreateGridObject)
     {
@@ -89,7 +92,7 @@ public class Grid<T>
         Vector3 cellOrigin = GetWorldPosition(x, y);
         float half = cellsize * 0.5f;
         return new Vector3(cellOrigin.x + half, cellOrigin.y + half);
-        
+
     }
     public Vector3 GetCenterOfCell(Vector3 p)
     {
@@ -105,6 +108,6 @@ public class Grid<T>
     {
         int x, y;
         GetXY(p, out x, out y);
-        grid[x,y] = default(T);
+        grid[x, y] = default(T);
     }
 }
