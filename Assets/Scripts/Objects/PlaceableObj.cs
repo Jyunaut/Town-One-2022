@@ -6,7 +6,7 @@ public class PlaceableObj : MonoBehaviour
 {
     public enum Direction { left, right, up, down };
     public Direction dir;
-    public Vector2Int position;
+    public Vector2 position;
 
     // Unit deletion data
     private float threshold;
@@ -14,7 +14,8 @@ public class PlaceableObj : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameManager.Instance.grid.SetObject(position.x, position.y, this);
+        position = transform.position;
+        GameManager.Instance.grid.SetObject(position, this);
     }
     protected virtual void Update()
     {
