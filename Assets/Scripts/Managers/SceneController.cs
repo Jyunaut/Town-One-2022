@@ -23,7 +23,7 @@ public class SceneController : MonoBehaviour
         _transitionScreen.gameObject.SetActive(false);
     }
 
-    private static void LoadScene(int index)
+    public static void LoadScene(int index)
     {
         Instance.StartCoroutine(Instance.SceneTransition(index));
     }
