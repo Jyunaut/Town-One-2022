@@ -6,7 +6,7 @@ public class EffectsManager : MonoBehaviour
 {
     public static EffectsManager Instance { get; private set; }
 
-    [SerializeField] private Camera _camera;
+    private Camera _camera;
 
     private void Awake()
     {
