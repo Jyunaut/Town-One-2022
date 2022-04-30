@@ -11,6 +11,7 @@ public class Grid<T>
     public int width, height;
     public Vector3 origin;
     public T[,] grid;
+    public bool debugLines;
 
     public Grid(int w, int h, float c, Vector3 o, Func<Grid<T>, int, int, T> CreateGridObject)
     {
@@ -28,16 +29,19 @@ public class Grid<T>
             }
         }
 
-        for (int x = 0; x < grid.GetLength(0); x++)
+        if (debugLines)
         {
-            for (int y = 0; y < grid.GetLength(1); y++)
+            for (int x = 0; x < grid.GetLength(0); x++)
             {
-                Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.black, 100f);
-                Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.black, 100f);
+                for (int y = 0; y < grid.GetLength(1); y++)
+                {
+                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x, y + 1), Color.black, 100f);
+                    Debug.DrawLine(GetWorldPosition(x, y), GetWorldPosition(x + 1, y), Color.black, 100f);
+                }
             }
+            Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.black, 100f);
+            Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.black, 100f);
         }
-        Debug.DrawLine(GetWorldPosition(0, height), GetWorldPosition(width, height), Color.black, 100f);
-        Debug.DrawLine(GetWorldPosition(width, 0), GetWorldPosition(width, height), Color.black, 100f);
     }
 
     public void SetObject(int x, int y, T l)
@@ -80,8 +84,27 @@ public class Grid<T>
     {
         return new Vector3(x, y) * cellsize + origin;
     }
+    public Vector3 GetCenterOfCell(int x, int y)
+    {
+        Vector3 cellOrigin = GetWorldPosition(x, y);
+        float half = cellsize * 0.5f;
+        return new Vector3(cellOrigin.x + half, cellOrigin.y + half);
+        
+    }
+    public Vector3 GetCenterOfCell(Vector3 p)
+    {
+        int x, y;
+        GetXY(p, out x, out y);
+        return GetCenterOfCell(x, y);
+    }
     public void DeleteObject(int x, int y)
     {
         grid[x, y] = default(T);
+    }
+    public void DeleteObject(Vector3 p)
+    {
+        int x, y;
+        GetXY(p, out x, out y);
+        grid[x,y] = default(T);
     }
 }
