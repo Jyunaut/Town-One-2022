@@ -5,12 +5,16 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public Camera cam;
+
+    [field: Header("Grid data")]
     public Grid<GridObject> grid;
     public int gridWidth;
     public int gridHeight;
     public float gridCellSize;
     public Vector3 gridOrigin;
-    //comment by William
+    [field: Header("Unit Deletion data")]
+    public float threshold;
 
     private void Awake()
     {
