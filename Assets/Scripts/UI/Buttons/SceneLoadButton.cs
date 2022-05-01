@@ -3,8 +3,7 @@ using UnityEngine.UI;
 
 public class SceneLoadButton : MonoBehaviour
 {
-    [SerializeField] private int _sceneToLoad;
-
+    [SerializeField] Constants.Scene _scene;
     private Button _button;
 
     private void Awake()
@@ -15,6 +14,6 @@ public class SceneLoadButton : MonoBehaviour
 
     private void LoadScene()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(_scene.ToString());
     }
 }
