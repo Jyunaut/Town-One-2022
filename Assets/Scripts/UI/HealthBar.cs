@@ -70,4 +70,9 @@ public class HealthBar : MonoBehaviour
         return null;
     }
 
+    public void DestryInstance()
+    {
+        Destroy(UIInstance);
+    }
+
 }
