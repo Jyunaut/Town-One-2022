@@ -28,7 +28,11 @@ public class MonkeyQueue : MonoBehaviour
 
     public void SpawnMonkey(Vector3 position)
     {
-        Instantiate(queue[0], position, Quaternion.identity);
+        var monkey = Instantiate(queue[0], position, Quaternion.identity).GetComponent<MonkeyFirefighter>();
+        int x = 0;
+        int y = 0;
+        GameManager.Instance.grid.GetXY(position, out x, out y);
+        monkey.position = new Vector2Int(x, y);
         queue[0].GetComponent<MonkeyFirefighter>().SetGridPosition(position);
         UpdateList();
     }
