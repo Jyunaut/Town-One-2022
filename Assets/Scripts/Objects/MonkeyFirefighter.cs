@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonkeyFirefighter : PlaceableObj
 {
+    public Animator animator;
+
     public int attack;
     public float attackSpeed = 1.0f;
     public float timer = 0.0f;
@@ -79,6 +81,7 @@ public class MonkeyFirefighter : PlaceableObj
     private void Awake()
     {
         sr = this.GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     protected override void Start()

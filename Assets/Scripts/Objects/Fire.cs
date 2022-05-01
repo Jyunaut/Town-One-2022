@@ -9,6 +9,7 @@ public class Fire : PlaceableObj, Damageable
     public FireData data;
     HealthBar healthBar;
 
+    private Animator animator;
     private Transform ObjectTransform;
 
     delegate void damageHandler(int cur, int max);
@@ -19,6 +20,7 @@ public class Fire : PlaceableObj, Damageable
         hp = MaxHP;
         healthBar = GetComponent<HealthBar>();
         onDamaged += healthBar.changeHealthBar;
+        animator = GetComponent<Animator>();
     }
 
     public int HP {
@@ -44,8 +46,15 @@ public class Fire : PlaceableObj, Damageable
     public void onDeath()
     {
         Debug.Log("you died");
-        Destroy(this.gameObject);
+        StartCoroutine(playDeathAnimation());
         return;
+    }
+
+    private IEnumerator playDeathAnimation()
+    {
+        animator.Play("Death");
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
     }
 
     public int receiveDamage(int dmg)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WinTrigger : MonoBehaviour
+public class Trigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -10,6 +10,11 @@ public class WinTrigger : MonoBehaviour
         {
             GetComponent<CameraPan>().StopPan();
             GameEvent.WinGame();
+        }
+        else if (other.CompareTag("Fire"))
+        {
+            GetComponent<CameraPan>().StopPan();
+            GameEvent.LoseGame();
         }
     }
 }

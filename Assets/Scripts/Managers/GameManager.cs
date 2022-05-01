@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
         SpawnFires();
 
-        GameEvent.OnGameLose += LoadScene;
+        GameEvent.OnGameLose += LoadLoseScene;
     }
 
     private void SpawnFires()
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void LoadScene()
+    private void LoadLoseScene()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
     }
