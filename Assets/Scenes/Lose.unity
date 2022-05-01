@@ -661,22 +661,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909207898}
     m_Modifications:
-    - target: {fileID: 8963511738129432599, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738129432599, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738129432599, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738129432599, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 60691a223528e1944844c7770f9d3656, type: 3}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -764,18 +748,6 @@ PrefabInstance:
     - target: {fileID: 8963511738321342305, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_Name
       value: Main Menu Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738321342306, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.b
-      value: 0.1764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738321342306, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.g
-      value: 0.08627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8963511738321342306, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6745098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
@@ -4061,22 +4033,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 909207898}
     m_Modifications:
-    - target: {fileID: 5558535699079504168, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535699079504168, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535699079504168, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535699079504168, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 60691a223528e1944844c7770f9d3656, type: 3}
     - target: {fileID: 5558535700263465320, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4164,18 +4120,6 @@ PrefabInstance:
     - target: {fileID: 5558535700263465321, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
       propertyPath: m_Name
       value: Start Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535700263465322, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.b
-      value: 0.1764706
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535700263465322, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.g
-      value: 0.08627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 5558535700263465322, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
-      propertyPath: m_Color.r
-      value: 0.6745098
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3fec61af8da714cb2fcb42d84455d7, type: 3}
