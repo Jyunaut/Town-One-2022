@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Fire : PlaceableObj, Damageable
 {
     public int hp;
     public FireData data;
     HealthBar healthBar;
+
+    private Transform ObjectTransform;
 
     delegate void damageHandler(int cur, int max);
     event damageHandler onDamaged;
@@ -56,5 +59,22 @@ public class Fire : PlaceableObj, Damageable
         Debug.Log("HP: " + hp);
         hp = currHp;
         return currHp;
+    }
+
+    private new void Update()
+    {
+
+        // Animate the fire
+        // - angle it
+        // - make it jiggle, 
+        // - spawn particle effects over time
+        /*
+        float fire_scale_jiggle_max     = 0.25f;
+        float fire_scale_jiggle_speed   = 0.1f;
+        float fire_scale_jiggle_time    = Time.deltaTime * 100000;
+        float fire_scale                = (float) (1 + fire_scale_jiggle_max * (Math.Cos(Mathf.Deg2Rad * fire_scale_jiggle_time * fire_scale_jiggle_speed)));
+
+        gameObject.transform.localScale = new Vector3(fire_scale, fire_scale, 1);
+        */
     }
 }
