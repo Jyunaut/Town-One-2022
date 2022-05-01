@@ -71,11 +71,12 @@ public class MonkeyFirefighter : PlaceableObj
         if (timer >= attackSpeed)
         {
             var target = getTarget();
-            if (target != null)
-            {
-                Debug.Log("target found");
-                putOutFire(target);
-            }
+            if (target == null)
+                return;
+
+            Debug.Log("target found");
+            putOutFire(target);
+
             timer = 0.0f;
         }
     }
