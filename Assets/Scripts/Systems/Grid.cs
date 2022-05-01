@@ -12,7 +12,6 @@ public class Grid<T>
     public T[,] grid;
     public bool debugLines = true;
 
-    GameObject coloredFloor;
 
     public void generatefloor(GameObject obj)
     {

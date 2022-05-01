@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using System;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     public int min;
     public int max;
     public PlaceableObj FirePrefab;
+    public GameObject blueLine;
+    public GameObject redLine;
+    
 
     private void Awake()
     {
@@ -40,17 +43,59 @@ public class GameManager : MonoBehaviour
 
     private void SpawnFires()
     {
-        if(min < 0 || max > gridWidth)
-            return;
-
-        for (int x = min; x < max; x++)
+        System.Random rnd = new System.Random();
+        for (int i=0; i < grid.width; i++)
         {
-            for (int y = 0; y < gridHeight; y++)
+            
+            for(int j=0; j < grid.height; j++)
             {
-                grid.SetObject(x, y, FirePrefab);
-                Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
+                int randNum = rnd.Next(grid.width);
+                if (randNum < i)
+                {
+                    var fireInstance = Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Fire>();
+      
+                    fireInstance.position = new Vector2Int(i, j);
+                    grid.SetObject(i, j, fireInstance);
+                    Debug.Log(fireInstance.transform.position);
+                }
+                
             }
         }
+
+        
+
+
+    //    if(min < 0 || max > gridWidth)
+    //        return;
+
+    //    for (int x = min; x < max; x++)
+    //    {
+    //        for (int y = 0; y < gridHeight; y++)
+    //        {
+    //            grid.SetObject(x, y, FirePrefab);
+    //            Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
+    //        }
+    //    }
+    }
+
+    public bool checkGridWithinRange(int x)
+    {
+        var bluePos = blueLine.transform.position;
+        var redPos = redLine.transform.position;
+        int blueX = 0, blueY = 0, redX = 0, redY = 0;
+        grid.GetXY(bluePos, out blueX, out blueY);
+        grid.GetXY(redPos, out redX, out redY);
+
+        if (!grid.IsValidXY(blueX, blueY)||!grid.IsValidXY(redX,redY))
+        {
+            return false;
+        }
+
+        if (x >= blueX && x < redX)
+        {
+            return true;
+        }
+        else return false;
     }
 
     private void LoadLoseScene()
