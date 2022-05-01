@@ -8,9 +8,14 @@ public class CameraPan : MonoBehaviour
 
     private Coroutine _panCoroutine;
 
-    public void Start()
+    public void OnEnable()
     {
         GameEvent.OnGameStart += StartPan;
+    }
+
+    public void OnDisable()
+    {
+        GameEvent.OnGameStart -= StartPan;
     }
 
     public void StartPan()
@@ -29,6 +34,7 @@ public class CameraPan : MonoBehaviour
 
     public void StopPan()
     {
-        StopCoroutine(_panCoroutine);
+        if (_panCoroutine != null)
+            StopCoroutine(_panCoroutine);
     }
 }
