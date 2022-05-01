@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CameraPan : MonoBehaviour
 {
-    [SerializeField, Range(0f, 10f)] private float _panSpeed;
+    [SerializeField, Range(0f, 30f)] private float _panSpeed;
 
     private Coroutine _panCoroutine;
 
+    public void Start()
+    {
+        GameEvent.OnGameStart += StartPan;
+    }
+
     public void StartPan()
     {
-
         _panCoroutine = StartCoroutine(Pan());
 
         IEnumerator Pan()

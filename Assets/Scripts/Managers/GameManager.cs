@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour
         grid = new Grid<PlaceableObj>(gridWidth, gridHeight, gridCellSize, gridOrigin, (Grid<PlaceableObj> g, int x, int y) => new PlaceableObj());
         var floorGrid = new Grid<PlaceableObj>(gridWidth, gridHeight, gridCellSize, gridOrigin, (Grid<PlaceableObj> g, int x, int y) => new PlaceableObj());
         floorGrid.generatefloor(floor);
-        
-        
 
         SpawnFires();
 
