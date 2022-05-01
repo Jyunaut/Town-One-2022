@@ -61,7 +61,7 @@ public class Fire : PlaceableObj, Damageable
         return currHp;
     }
 
-    private new void Update()
+    private void Update()
     {
 
         // Animate the fire
