@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1584303278324605972
+--- !u!1 &1526257830614788299
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1584303278324605974}
-  - component: {fileID: 1584303278324605973}
+  - component: {fileID: 1526257830614788298}
+  - component: {fileID: 1526257830614788309}
   m_Layer: 0
-  m_Name: Effects Manager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1584303278324605974
+--- !u!4 &1526257830614788298
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584303278324605972}
+  m_GameObject: {fileID: 1526257830614788299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,16 +31,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1584303278324605973
+--- !u!114 &1526257830614788309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584303278324605972}
+  m_GameObject: {fileID: 1526257830614788299}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 335204bf1f204b345ba0d430743c9027, type: 3}
+  m_Script: {fileID: 11500000, guid: a190dd79325bfa344b2f5a17606096bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  cam: {fileID: 0}
+  gridWidth: 55
+  gridHeight: 4
+  gridCellSize: 1
+  gridOrigin: {x: 0, y: 0, z: 0}
+  threshold: 1
+  min: 4
+  max: 55
+  FirePrefab: {fileID: 1896292023223387023, guid: b5fe63f4064404519800126c678d398a, type: 3}
