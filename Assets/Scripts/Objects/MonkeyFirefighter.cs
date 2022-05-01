@@ -75,18 +75,12 @@ public class MonkeyFirefighter : PlaceableObj
     public void RandomRotate()
     {
         dir = (Direction)Random.Range(0, 4);
-        Debug.Log(dir);
     }
 
     private void Awake()
     {
         sr = this.GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-    }
-
-    protected override void Start()
-    {
-        base.Start();
     }
 
     protected void Update()

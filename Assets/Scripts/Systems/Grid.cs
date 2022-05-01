@@ -59,6 +59,17 @@ public class Grid<T>
         }
     }
 
+    public bool IsValidXY(int x, int y)
+    {
+        if (x < 0 || y < 0 || x > width || y > height)
+            return false;
+        return true;
+    }
+    public bool IsValidXY(Vector3 p)
+    {
+        GetXY(p, out int x, out int y);
+        return IsValidXY(x,y);
+    }
     public void SetObject(int x, int y, T l)
     {
         if (x < 0 || y < 0 || x > width || y > height)
@@ -82,6 +93,10 @@ public class Grid<T>
     }
     public T GetObject(int x, int y)
     {
+        if (x < 0 || y < 0 || x > width || y > height)
+        {
+            return default(T);
+        }
         return grid[x, y];
     }
     public T GetObject(Vector3 p)

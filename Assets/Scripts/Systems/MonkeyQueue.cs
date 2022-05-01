@@ -18,8 +18,6 @@ public class MonkeyQueue : MonoBehaviour
             queue[i].SetActive(false);
             queue[i].GetComponent<MonkeyFirefighter>().RandomRotate();
         }
-        foreach (GameObject i in queue)
-            Debug.Log(i.GetComponent<MonkeyFirefighter>().dir);
     }
 
     private void UpdateList()
@@ -36,6 +34,7 @@ public class MonkeyQueue : MonoBehaviour
     public void SpawnMonkey(Vector3 position)
     {
         queue[0].transform.position = position;
+        queue[0].GetComponent<MonkeyFirefighter>().SetGridPosition(position);
         queue[0].GetComponent<MonkeyFirefighter>().SetRotation();
         queue[0].SetActive(true);
         UpdateList();
