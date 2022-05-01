@@ -3,28 +3,15 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneController : MonoBehaviour
+public class SceneController
 {
-    public static SceneController Instance { get; private set; }
-
-    private void Awake()
-    {
-        if (Instance != null || Instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-    }
-
     public static void LoadScene(int index)
     {
-        Image img = GameObject.FindGameObjectWithTag("TransitionScreen").GetComponent<Image>();
-        img.rectTransform.sizeDelta = new Vector2(Screen.width + 20f, Screen.height + 20f);
-        Instance.StartCoroutine(Instance.SceneTransition(img, index));
+        // GameObject obj = new GameObject();
+        // Image img = obj.AddComponent<Image>();
+        // img.rectTransform.sizeDelta = new Vector2(Screen.width + 20f, Screen.height + 20f);
+        SceneManager.LoadScene(index);
+        // Instance.StartCoroutine(SceneTransition(img, index));
     }
 
     private IEnumerator SceneTransition(Image img, int index)
