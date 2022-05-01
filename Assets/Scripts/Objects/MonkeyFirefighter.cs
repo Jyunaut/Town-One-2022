@@ -5,8 +5,8 @@ using UnityEngine;
 public class MonkeyFirefighter : PlaceableObj
 {
     public int attack;
-    public float attackSpeed =1.0f;
-    public float timer=0.0f;
+    public float attackSpeed = 1.0f;
+    public float timer = 0.0f;
 
     Vector2Int getDirVec(Direction dir)
     {
@@ -40,11 +40,11 @@ public class MonkeyFirefighter : PlaceableObj
                 return Vector3.zero;
         }
     }
-        Fire getTarget()
+    Fire getTarget()
     {
         var dirVec = getDirVec(dir);
         var targetPos = dirVec + position;
-        var facingObj = GameManager.Instance.grid.GetObject(targetPos.x, targetPos.y);
+        var facingObj = GameManager.Instance.grid.GetObject((int)targetPos.x, (int)targetPos.y);
         return facingObj is Fire ? (Fire)facingObj : null;
     }
 
@@ -71,11 +71,12 @@ public class MonkeyFirefighter : PlaceableObj
         if (timer >= attackSpeed)
         {
             var target = getTarget();
-            if (target != null)
-            {
-                Debug.Log("target found");
-                putOutFire(target);
-            }
+            if (target == null)
+                return;
+
+            Debug.Log("target found");
+            putOutFire(target);
+
             timer = 0.0f;
         }
     }

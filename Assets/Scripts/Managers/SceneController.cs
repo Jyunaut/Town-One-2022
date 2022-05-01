@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        _transitionScreen.rectTransform.sizeDelta = new Vector2(Screen.width + 20f, Screen.height + 20);
+        _transitionScreen.rectTransform.sizeDelta = new Vector2(Screen.width + 20f, Screen.height + 20f);
         _transitionScreen.gameObject.SetActive(false);
     }
 

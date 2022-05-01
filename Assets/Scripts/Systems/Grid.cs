@@ -29,7 +29,7 @@ public class Grid<T>
     }
 
     public Grid(int w, int h, float c, Vector3 o,Func<Grid<T>, int, int, T> CreateGridObject)
-    {
+    {   
         width = w;
         height = h;
         cellsize = c;

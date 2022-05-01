@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlaceableObj : MonoBehaviour
 {
     public enum Direction { left, right, up, down };
+
     protected Direction dir;
     public Vector2Int position;
-
-
 
     // Unit deletion data
     private float threshold;
@@ -16,7 +15,7 @@ public class PlaceableObj : MonoBehaviour
 
     protected virtual void Start()
     {
-        GameManager.Instance.grid.SetObject(position.x, position.y, this);
+        GameManager.Instance.grid.SetObject(position.x,position.y, this);
     }
 
     protected virtual void Update()
