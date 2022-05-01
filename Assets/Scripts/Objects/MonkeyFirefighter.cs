@@ -13,6 +13,9 @@ public class MonkeyFirefighter : PlaceableObj
     public SpriteRenderer sr;
     public Sprite front, back, right;
 
+    public AudioClip spawnSFX;
+    public AudioClip spraySFX;
+
     Vector2Int getDirVec(Direction dir)
     {
         switch (dir)
