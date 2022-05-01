@@ -8,8 +8,8 @@ public class PlaceableObj : MonoBehaviour
     public Direction dir;
     public Vector2Int position;
 
-    protected virtual void Start()
+    public void SetGridPosition(Vector3 pos)
     {
-        GameManager.Instance.grid.SetObject(transform.position, this);
+        GameManager.Instance.grid.SetObject(pos, this);
     }
 }
