@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [field: Header("Fire spawning data")]
     public int min;
     public int max;
+
     public PlaceableObj FirePrefab;
     public GameObject blueLine;
     public GameObject redLine;
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     private void SpawnFires()
     {
+        int easyLines = 15;
+
         System.Random rnd = new System.Random();
         for (int i=0; i < grid.width; i++)
         {
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
             for(int j=0; j < grid.height; j++)
             {
                 int randNum = rnd.Next(grid.width);
-                if (randNum < i)
+                if (randNum < i-easyLines)
                 {
                     var fireInstance = Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Fire>();
       
