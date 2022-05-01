@@ -44,8 +44,13 @@ public class MonkeyFirefighter : PlaceableObj
     {
         var dirVec = getDirVec(dir);
         var targetPos = dirVec + position;
-        var facingObj = GameManager.Instance.grid.GetObject((int)targetPos.x, (int)targetPos.y);
-        return facingObj is Fire ? (Fire)facingObj : null;
+        if(targetPos.x >= 0 && targetPos.x < GameManager.Instance.grid.width && targetPos.y>0&&targetPos.y < GameManager.Instance.grid.height)
+        {
+            var facingObj = GameManager.Instance.grid.GetObject(targetPos.x, targetPos.y);
+            return facingObj is Fire ? (Fire)facingObj : null;
+        }
+        return null;
+
     }
 
     void putOutFire(Damageable fire)
@@ -71,13 +76,13 @@ public class MonkeyFirefighter : PlaceableObj
         if (timer >= attackSpeed)
         {
             var target = getTarget();
+            timer = 0.0f;
             if (target == null)
                 return;
-
             Debug.Log("target found");
             putOutFire(target);
 
-            timer = 0.0f;
+            
         }
     }
 }
