@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
         
 
         SpawnFires();
+
+        GameEvent.OnGameLose += LoadScene;
     }
 
     private void SpawnFires()
@@ -51,5 +53,10 @@ public class GameManager : MonoBehaviour
                 Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
             }
         }
+    }
+
+    private void LoadScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Lose");
     }
 }
