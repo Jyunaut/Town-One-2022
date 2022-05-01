@@ -13,8 +13,8 @@ public class MonkeyFirefighter : PlaceableObj
     public SpriteRenderer sr;
     public Sprite front, back, right;
 
-    public AudioClip spawnSFX;
-    public AudioClip spraySFX;
+    public AudioSource spawnSFX;
+    public AudioSource spraySFX;
 
     Vector2Int getDirVec(Direction dir)
     {
@@ -89,6 +89,7 @@ public class MonkeyFirefighter : PlaceableObj
     private void Start()
     {
         animator.Play("Spawn");
+        spawnSFX.Play();
     }
 
     protected void Update()
@@ -105,11 +106,17 @@ public class MonkeyFirefighter : PlaceableObj
                 return;
             }
             animator.Play("Firing");
+            spraySFX.Play();
             Debug.Log("target found");
             putOutFire(target);
 
 
         }
+    }
+
+    public void PlaySpraySFX()
+    {
+
     }
 
     private void DeleteOffMap()
