@@ -8,6 +8,9 @@ public class MonkeyFirefighter : PlaceableObj
     public float attackSpeed = 1.0f;
     public float timer = 0.0f;
 
+    public SpriteRenderer sr;
+    public Sprite front, back, right;
+
     Vector2Int getDirVec(Direction dir)
     {
         switch (dir)
@@ -24,20 +27,30 @@ public class MonkeyFirefighter : PlaceableObj
                 return new Vector2Int(0, 0);
         }
     }
-    public Quaternion getRotation()
+    public void SetRotation()
     {
         switch (dir)
         {
             case Direction.left:
-                return Quaternion.AngleAxis(180f, Vector3.forward);
+                sr.sprite = right;
+                sr.flipX = true;
+                break;
             case Direction.right:
-                return Quaternion.AngleAxis(0f, Vector3.forward);
+                sr.sprite = right;
+                sr.flipX = false;
+                break;
             case Direction.up:
-                return Quaternion.AngleAxis(-90f, Vector3.forward);
+                sr.sprite = front;
+                sr.flipX = false;
+                break;
             case Direction.down:
-                return Quaternion.AngleAxis(-90f, Vector3.forward);
+                sr.sprite = back;
+                sr.flipX = false;
+                break;
             default:
-                return Quaternion.identity;
+                sr.sprite = right;
+                sr.flipX = false;
+                break;
         }
     }
     Fire getTarget()
@@ -60,6 +73,12 @@ public class MonkeyFirefighter : PlaceableObj
     public void RandomRotate()
     {
         dir = (Direction)Random.Range(0, 4);
+        Debug.Log(dir);
+    }
+
+    private void Awake()
+    {
+        sr = this.GetComponent<SpriteRenderer>();
     }
 
     protected override void Start()
