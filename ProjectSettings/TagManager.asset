@@ -8,6 +8,7 @@ TagManager:
   - SceneController
   - WinTrigger
   - Fire
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,17 @@ public class HealthBar : MonoBehaviour
             Debug.LogError("HealthBar Anchor point not added!");
         }
 
-        var canvas = FindObjectOfType<Canvas>();
+        var canvases = FindObjectsOfType<Canvas>();
+        Canvas canvas = null;
+        foreach(Canvas i in canvases)
+        {
+            if (i.CompareTag("Canvas"))
+            {
+                canvas = i;
+            }
+        }
+
+
         if (canvas == null)
         {
             Debug.Log("Missing Canvas!");
