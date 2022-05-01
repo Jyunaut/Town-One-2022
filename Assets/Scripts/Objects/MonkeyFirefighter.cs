@@ -111,11 +111,11 @@ public class MonkeyFirefighter : PlaceableObj
         if (this.transform.position.x > threshold)
             return;
 
-        if (this.gameObject.activeInHierarchy)
-        {
-            GameManager.Instance.grid.DeleteObject(transform.position);
-            GameObject.Destroy(this.gameObject);
-        }
+        // if (this.gameObject.activeInHierarchy)
+        // {
+        //     GameManager.Instance.grid.DeleteObject(transform.position);
+        //     GameObject.Destroy(this.gameObject);
+        // }
     }
 
 }
