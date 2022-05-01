@@ -2307,7 +2307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 160
+      value: 108.8
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2343,11 +2343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175.4
+      value: 210
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -167
+      value: -158.6
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
