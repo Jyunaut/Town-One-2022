@@ -12,7 +12,23 @@ public class Grid<T>
     public T[,] grid;
     public bool debugLines = true;
 
-    public Grid(int w, int h, float c, Vector3 o, Func<Grid<T>, int, int, T> CreateGridObject)
+    GameObject coloredFloor;
+
+    public void generatefloor(GameObject obj)
+    {
+        for(int i = 0; i < width; i++)
+        {
+            for(int j = 0; j < height; j++)
+            {
+                Vector3 pos = GetWorldPosition(i, j);
+                var floor = GameObject.Instantiate(obj).transform.GetChild(0).GetComponent<ColoredFloor>();
+                floor.position = new Vector2Int(i, j);
+                floor.gameObject.transform.position = pos+ Vector3.one * GameManager.Instance.grid.cellsize *0.5f;
+            }
+        }
+    }
+
+    public Grid(int w, int h, float c, Vector3 o,Func<Grid<T>, int, int, T> CreateGridObject)
     {
         width = w;
         height = h;

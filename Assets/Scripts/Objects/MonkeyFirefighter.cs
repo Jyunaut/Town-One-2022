@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Unit : PlaceableObj
+public class MonkeyFirefighter : PlaceableObj
 {
-
-
     public int attack;
     public float attackSpeed =1.0f;
     public float timer=0.0f;
@@ -26,7 +24,6 @@ public class Unit : PlaceableObj
                 return new Vector2Int(0, 0);
         }
     }
-
     Vector3 getRotation(Direction dir)
     {
         switch (dir)
@@ -43,9 +40,7 @@ public class Unit : PlaceableObj
                 return Vector3.zero;
         }
     }
-    
-
-    Fire getTarget()
+        Fire getTarget()
     {
         var dirVec = getDirVec(dir);
         var targetPos = dirVec + position;
@@ -65,8 +60,13 @@ public class Unit : PlaceableObj
         transform.eulerAngles = rotationEular;
     }
 
-    private void Update()
+    protected override void Start()
     {
+        base.Start();
+    }
+    protected override void Update()
+    {
+        base.Update();
         timer += Time.deltaTime;
         if (timer >= attackSpeed)
         {
@@ -78,6 +78,5 @@ public class Unit : PlaceableObj
             }
             timer = 0.0f;
         }
-        
     }
 }

@@ -8,10 +8,30 @@ public class PlaceableObj : MonoBehaviour
     protected Direction dir;
     public Vector2Int position;
 
-    private void Start()
+
+
+    // Unit deletion data
+    private float threshold;
+    private float cameraMin;
+
+    protected virtual void Start()
     {
         GameManager.Instance.grid.SetObject(position.x, position.y, this);
-        transform.position = GameManager.Instance.grid.GetWorldPosition(position.x, position.y)+Vector3.one*0.5f * GameManager.Instance.grid.cellsize;
     }
+
+    protected virtual void Update()
+    {
+        DeleteOffMapUnits();
+    }
+    private void DeleteOffMapUnits()
+    {
+        cameraMin = GameManager.Instance.cam.ViewportToWorldPoint(new Vector3(0, 0, GameManager.Instance.cam.nearClipPlane)).x;
+        threshold = cameraMin - GameManager.Instance.threshold;
+        if (this.transform.position.x > threshold)
+            return;
+        GameManager.Instance.grid.DeleteObject(transform.position);
+        GameObject.Destroy(this.gameObject);
+    }
+
 
 }

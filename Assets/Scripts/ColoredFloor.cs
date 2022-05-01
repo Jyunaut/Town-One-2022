@@ -9,10 +9,11 @@ public class ColoredFloor :PlaceableObj
     public Sprite lightColor;
 
 
-    private void Start()
+    protected override void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        if((position.x+position.y)/2 == 0)
+        base.Start();
+        spriteRenderer = transform.GetComponent<SpriteRenderer>();
+        if((position.x+position.y)%2 == 0)
         {
             spriteRenderer.sprite = lightColor;
         }
@@ -20,9 +21,12 @@ public class ColoredFloor :PlaceableObj
         {
             spriteRenderer.sprite = darkColor;
         }
-    
     }
 
-   
+    protected override void Update()
+    {
+        
+    }
+
 
 }
