@@ -47,8 +47,6 @@ public class GameManager : MonoBehaviour
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                Vector2 p = new Vector2(x,y);
-                Debug.Log(p);
                 grid.SetObject(x, y, FirePrefab.GetComponent<PlaceableObj>());
                 Instantiate(FirePrefab, grid.GetCenterOfCell(x,y), Quaternion.identity);
             }
