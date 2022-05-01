@@ -6,24 +6,24 @@ public class CameraPan : MonoBehaviour
 {
     [SerializeField, Range(0f, 10f)] private float _panSpeed;
 
-    public bool ReachedEnd { get; set; }
+    private Coroutine _panCoroutine;
 
-    private void Start()
+    public void StartPan()
     {
-        ReachedEnd = false;
-    }
-
-    public Coroutine StartPan()
-    {
-        return StartCoroutine(Pan());
+        _panCoroutine = StartCoroutine(Pan());
 
         IEnumerator Pan()
         {
-            while (!ReachedEnd)
+            while (true)
             {
                 transform.position = new Vector3(transform.position.x + _panSpeed * Time.deltaTime, transform.position.y);
                 yield return null;
             }
         }
+    }
+
+    public void StopPan()
+    {
+        StopCoroutine(_panCoroutine);
     }
 }
