@@ -10,7 +10,7 @@ public class Grid<T>
     public int width, height;
     public Vector3 origin;
     public T[,] grid;
-    public bool debugLines = true;
+    public bool debugLines = false;
 
 
     public void generatefloor(GameObject obj)

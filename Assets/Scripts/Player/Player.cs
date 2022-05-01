@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
                 queue.SpawnMonkey(spawnPos);
             }
-
         }
     }
 }

@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
       
                     fireInstance.position = new Vector2Int(i, j);
                     grid.SetObject(i, j, fireInstance);
-                    Debug.Log(fireInstance.transform.position);
                 }
                 
             }
@@ -89,7 +88,7 @@ public class GameManager : MonoBehaviour
         grid.GetXY(bluePos, out blueX, out blueY);
         grid.GetXY(redPos, out redX, out redY);
 
-        if (!grid.IsValidXY(blueX, blueY)||!grid.IsValidXY(redX,redY))
+        if (!grid.IsValidXY(blueX, blueY) || !grid.IsValidXY(redX, redY))
         {
             return false;
         }
