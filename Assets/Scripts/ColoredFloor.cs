@@ -21,11 +21,4 @@ public class ColoredFloor :PlaceableObj
             spriteRenderer.sprite = darkColor;
         }
     }
-
-    protected override void Update()
-    {
-        
-    }
-
-
 }

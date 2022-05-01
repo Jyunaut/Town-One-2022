@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public PlaceableObj Tower;
+    public MonkeyQueue queue;
+
+    private void Start()
+    {
+        queue = this.GetComponent<MonkeyQueue>();
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -17,8 +22,7 @@ public class Player : MonoBehaviour
             if (GameManager.Instance.grid.GetObject(Worldpos2D) == null)
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
-                Instantiate(Tower.gameObject, spawnPos, Quaternion.identity);
-                GameManager.Instance.grid.SetObject(Worldpos2D, Tower);
+                queue.SpawnMonkey(spawnPos);
             }
         }
     }
