@@ -22,6 +22,7 @@ public class PlaceableObj : MonoBehaviour
     {
         DeleteOffMapUnits();
     }
+
     private void DeleteOffMapUnits()
     {
         cameraMin = GameManager.Instance.cam.ViewportToWorldPoint(new Vector3(0, 0, GameManager.Instance.cam.nearClipPlane)).x;

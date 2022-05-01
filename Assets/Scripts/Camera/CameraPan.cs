@@ -8,6 +8,10 @@ public class CameraPan : MonoBehaviour
 
     private Coroutine _panCoroutine;
 
+    private void Start()
+    {
+        StartPan();
+    }
     public void StartPan()
     {
 
