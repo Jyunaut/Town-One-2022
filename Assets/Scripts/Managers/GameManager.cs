@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnFires()
     {
-        int easyLines = 15;
+        int easyLines = 5;
 
         System.Random rnd = new System.Random();
         for (int i=0; i < grid.width; i++)
@@ -52,9 +52,12 @@ public class GameManager : MonoBehaviour
             
             for(int j=0; j < grid.height; j++)
             {
-                int randNum = rnd.Next(grid.width);
-                if (randNum < i-easyLines)
+                int randNum = rnd.Next(100);
+                float posibility = Mathf.Clamp(((i-3)*0.5f / (float)grid.width) * 100.0f, 0f, 30.0f);
+
+                if (randNum < posibility)
                 {
+                    
                     var fireInstance = Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Fire>();
       
                     fireInstance.position = new Vector2Int(i, j);
