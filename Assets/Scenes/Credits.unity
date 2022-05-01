@@ -306,7 +306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.6629, y: -77}
+  m_AnchoredPosition: {x: -287, y: -111}
   m_SizeDelta: {x: 302.6742, y: 302.6742}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548664299
@@ -381,8 +381,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99, y: 24}
-  m_SizeDelta: {x: 340, y: 245}
+  m_AnchoredPosition: {x: 229.615, y: 27.8138}
+  m_SizeDelta: {x: 301.409, y: 353.1444}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1110546932
 MonoBehaviour:
@@ -416,7 +416,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
+    m_LineSpacing: 0.85
   m_Text: 'Cole Beernaerts
 
 
@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -636,11 +636,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 181
+      value: 279
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -125
+      value: -177
       objectReference: {fileID: 0}
     - target: {fileID: 8963511738321342304, guid: 63776020c4f188e47af5b69939d6f742, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
