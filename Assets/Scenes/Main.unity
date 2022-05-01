@@ -7379,10 +7379,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 79c9676670519e84aaa3d87595651f2c, type: 3}
-    m_FontSize: 25
-    m_FontStyle: 0
+    m_FontSize: 18
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -7390,11 +7390,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah
-    Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah
-    Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah
-    Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah Blah blah
-    Blah blah Blah blah '
+  m_Text: "This is a monkey world. A caravan of monkeys are returning to their village,
+    when suddenly a forest fire breaks out. Using ancient human technology, lead
+    your monkeys back to their village unharmed!\r\n\r\n- Place your monkeys strategically
+    on tiles to combat the wildfire \r\n- Follow the path home... the screen scrolls
+    automatically, you better keep up or you will have monkey flambe. \r\n- Manage
+    your limited resources efficiently or you may be left high and dry!"
 --- !u!222 &1263605699
 CanvasRenderer:
   m_ObjectHideFlags: 0
