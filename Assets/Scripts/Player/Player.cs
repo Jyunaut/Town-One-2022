@@ -19,11 +19,15 @@ public class Player : MonoBehaviour
             Vector3 Worldpos = Camera.main.ScreenToWorldPoint(mousePos);
             Vector2 Worldpos2D = new Vector2(Worldpos.x, Worldpos.y);
 
-            if (!GameManager.Instance.grid.GetObject(Worldpos2D) && GameManager.Instance.grid.IsValidXY(Worldpos2D))
+            int x=0, y = 0;
+            GameManager.Instance.grid.GetXY(Worldpos, out x, out y);
+
+            if (!GameManager.Instance.grid.GetObject(Worldpos2D) && GameManager.Instance.grid.IsValidXY(Worldpos2D) && GameManager.Instance.checkGridWithinRange(x))
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
                 queue.SpawnMonkey(spawnPos);
             }
+
         }
     }
 }
