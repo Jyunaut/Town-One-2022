@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     [field: Header("Fire spawning data")]
     public int min;
     public int max;
-    public PlaceableObj FirePrefab;
+    public GameObject FirePrefab;
 
     private void Awake()
     {
@@ -47,8 +47,10 @@ public class GameManager : MonoBehaviour
         {
             for (int y = 0; y < gridHeight; y++)
             {
-                grid.SetObject(x, y, FirePrefab);
-                Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
+                Vector2 p = new Vector2(x,y);
+                Debug.Log(p);
+                grid.SetObject(x, y, FirePrefab.GetComponent<PlaceableObj>());
+                Instantiate(FirePrefab, grid.GetCenterOfCell(x,y), Quaternion.identity);
             }
         }
     }

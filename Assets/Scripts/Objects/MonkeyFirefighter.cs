@@ -59,7 +59,7 @@ public class MonkeyFirefighter : PlaceableObj
     {
         var dirVec = getDirVec(dir);
         var targetPos = dirVec + position;
-        if(targetPos.x >= 0 && targetPos.x < GameManager.Instance.grid.width && targetPos.y>0&&targetPos.y < GameManager.Instance.grid.height)
+        if (targetPos.x >= 0 && targetPos.x < GameManager.Instance.grid.width && targetPos.y > 0 && targetPos.y < GameManager.Instance.grid.height)
         {
             var facingObj = GameManager.Instance.grid.GetObject(targetPos.x, targetPos.y);
             return facingObj is Fire ? (Fire)facingObj : null;
@@ -96,10 +96,10 @@ public class MonkeyFirefighter : PlaceableObj
             Debug.Log("target found");
             putOutFire(target);
 
-            
+
         }
     }
-    
+
     private void DeleteOffMap()
     {
         float cameraMin = GameManager.Instance.cam.ViewportToWorldPoint(new Vector3(0, 0, GameManager.Instance.cam.nearClipPlane)).x;
@@ -107,8 +107,12 @@ public class MonkeyFirefighter : PlaceableObj
 
         if (this.transform.position.x > threshold)
             return;
-        GameManager.Instance.grid.DeleteObject(transform.position);
-        GameObject.Destroy(this.gameObject);
+
+        if (this.gameObject.activeInHierarchy)
+        {
+            GameManager.Instance.grid.DeleteObject(transform.position);
+            GameObject.Destroy(this.gameObject);
+        }
     }
 
 }

@@ -418,7 +418,7 @@ Transform:
   - {fileID: 1027147695}
   - {fileID: 508578550}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &44790102
 GameObject:
@@ -6814,7 +6814,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &882609058
 GameObject:
@@ -9025,7 +9025,7 @@ Transform:
   m_LocalScale: {x: 141.29, y: 100, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1204466385
 GameObject:
@@ -11479,9 +11479,9 @@ MonoBehaviour:
   gridOrigin: {x: 3, y: 0, z: 0}
   floor: {fileID: 4451359570489506271, guid: 835ee8757055244df9a77d5fbf09b57d, type: 3}
   threshold: 1
-  min: 2
-  max: 2
-  FirePrefab: {fileID: 1896292023223387023, guid: b5fe63f4064404519800126c678d398a, type: 3}
+  min: 5
+  max: 20
+  FirePrefab: {fileID: 1896292023223387060, guid: b5fe63f4064404519800126c678d398a, type: 3}
 --- !u!1 &1482144606
 GameObject:
   m_ObjectHideFlags: 0

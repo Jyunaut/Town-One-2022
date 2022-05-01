@@ -9,7 +9,7 @@ public class ColoredFloor :PlaceableObj
     public Sprite lightColor;
 
 
-    protected override void Start()
+    private void Start()
     {
         spriteRenderer = transform.GetComponent<SpriteRenderer>();
         if((position.x+position.y)%2 == 0)
