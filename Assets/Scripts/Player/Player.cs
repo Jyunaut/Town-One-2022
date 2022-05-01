@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
                 Instantiate(Tower.gameObject, spawnPos, Quaternion.identity);
-                // GameManager.Instance.grid.SetObject(Worldpos2D, Tower);
+                GameManager.Instance.grid.SetObject(Worldpos2D, Tower);
             }
         }
     }
