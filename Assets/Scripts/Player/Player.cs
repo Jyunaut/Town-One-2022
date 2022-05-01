@@ -22,8 +22,7 @@ public class Player : MonoBehaviour
             if (GameManager.Instance.grid.GetObject(Worldpos2D) == null)
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
-                MonkeyFirefighter nextMonkey = queue.GetNextMonkey();
-                Instantiate(nextMonkey.gameObject, spawnPos, nextMonkey.getRotation());
+                queue.SpawnMonkey(spawnPos);
             }
         }
     }
