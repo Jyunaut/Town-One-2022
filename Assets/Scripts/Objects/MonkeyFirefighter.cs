@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonkeyFirefighter : PlaceableObj
 {
-    public Animator animator;
+    private Animator animator;
 
     public int attack;
     public float attackSpeed = 1.0f;
