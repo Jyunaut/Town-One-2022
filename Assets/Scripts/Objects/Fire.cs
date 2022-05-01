@@ -20,8 +20,17 @@ public class Fire : PlaceableObj, Damageable
     {
         hp = MaxHP;
         healthBar = GetComponent<HealthBar>();
-        onDamaged += healthBar.changeHealthBar;
         animator = GetComponent<Animator>();
+    }
+
+    private void OnEnable()
+    {
+        onDamaged += healthBar.changeHealthBar;
+    }
+
+    private void OnDisable()
+    {
+        onDamaged -= healthBar.changeHealthBar;
     }
 
     public int HP {

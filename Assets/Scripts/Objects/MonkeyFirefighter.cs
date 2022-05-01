@@ -86,6 +86,11 @@ public class MonkeyFirefighter : PlaceableObj
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        animator.Play("Spawn");
+    }
+
     protected void Update()
     {
         DeleteOffMap();
@@ -95,7 +100,11 @@ public class MonkeyFirefighter : PlaceableObj
             var target = getTarget();
             timer = 0.0f;
             if (target == null)
+            {
+                animator.Play("Idle");
                 return;
+            }
+            animator.Play("Firing");
             Debug.Log("target found");
             putOutFire(target);
 
