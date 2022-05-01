@@ -10,15 +10,17 @@ public class MonkeyQueue : MonoBehaviour
 
     private void Start()
     {
+        queue = new List<GameObject>();
         for(int i = 0; i < queueSize; i++)
-            queue[i] = monkeyPrefabs[Random.Range(0, monkeyPrefabs.Count-1)];
+        {
+            queue.Add(monkeyPrefabs[Random.Range(0, monkeyPrefabs.Count - 1)]);
+        }
     }
     
     private void UpdateList()
     {
-        for (int i = 1; i < queueSize; i++)
-            queue[i-1] = queue[i];
-        queue[queueSize-1] = monkeyPrefabs[Random.Range(0, monkeyPrefabs.Count-1)];
+        queue.RemoveAt(0);
+        queue.Add(monkeyPrefabs[Random.Range(0, monkeyPrefabs.Count - 1)]);
     }
 
     public void SpawnMonkey(Vector3 position)
