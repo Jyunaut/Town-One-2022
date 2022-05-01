@@ -24,9 +24,7 @@ public class ColoredFloor :PlaceableObj
 
     private void OnMouseEnter()
     {
-        Debug.Log(spriteRenderer.color);
         spriteRenderer.color = new Color32(64, 255, 64, 255);
-        Debug.Log(spriteRenderer.color);
     }
 
     private void OnMouseExit()
