@@ -7,6 +7,7 @@ public class GameIntroButton : MonoBehaviour
 {
     [SerializeField] private GameObject _introScreen;
     [SerializeField] private GameObject _hud;
+    public GameObject player;
 
     private Button _button;
 
@@ -15,6 +16,7 @@ public class GameIntroButton : MonoBehaviour
         _button = GetComponent<Button>();
         _button.onClick.AddListener(SwapCanvas);
         _button.onClick.AddListener(GameEvent.StartGame);
+        _button.onClick.AddListener(player.GetComponent<Player>().SetWait);
     }
 
     private void SwapCanvas()
