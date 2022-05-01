@@ -5080,6 +5080,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _introScreen: {fileID: 44790102}
   _hud: {fileID: 231307777}
+  player: {fileID: 1046480727}
 --- !u!114 &855476667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6385,6 +6386,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1046480727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4257557921397311090, guid: 877dce3b345d72d48a6d598736eeea2e, type: 3}
+  m_PrefabInstance: {fileID: 1294493295}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1049542150
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,16 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
     public MonkeyQueue queue;
+    private float timer;
+    private float endTimer;
+    private Action doAction;
 
     private void Start()
     {
+        timer = 0f;
+        endTimer = 0.2f;
         queue = this.GetComponent<MonkeyQueue>();
     }
     private void Update()
+    {
+        Debug.Log(doAction);
+        doAction();
+    }
+    public void SetWait()
+    {
+        doAction = Wait;
+    }
+    private void Wait()
+    {
+        
+        timer += Time.deltaTime;
+        if(timer > endTimer)
+            doAction = PlayerControls;
+
+    }
+    private void PlayerControls()
     {
         if (Input.GetMouseButtonDown(0))
         {
