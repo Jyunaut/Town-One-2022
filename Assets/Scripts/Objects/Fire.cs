@@ -8,6 +8,7 @@ public class Fire : PlaceableObj, Damageable
     public int hp;
     public FireData data;
     HealthBar healthBar;
+    public AudioClip deathSFX;
 
     private Animator animator;
     private Transform ObjectTransform;
