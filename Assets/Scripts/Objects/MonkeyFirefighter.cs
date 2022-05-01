@@ -24,20 +24,20 @@ public class MonkeyFirefighter : PlaceableObj
                 return new Vector2Int(0, 0);
         }
     }
-    Vector3 getRotation(Direction dir)
+    public Quaternion getRotation()
     {
         switch (dir)
         {
             case Direction.left:
-                return new Vector3(0, 0, 90);
+                return Quaternion.AngleAxis(180f, Vector3.forward);
             case Direction.right:
-                return new Vector3(0, 0, -90);
+                return Quaternion.AngleAxis(0f, Vector3.forward);
             case Direction.up:
-                return new Vector3(0, 0, 0);
+                return Quaternion.AngleAxis(-90f, Vector3.forward);
             case Direction.down:
-                return new Vector3(0, 0, 180);
+                return Quaternion.AngleAxis(-90f, Vector3.forward);
             default:
-                return Vector3.zero;
+                return Quaternion.identity;
         }
     }
     Fire getTarget()
@@ -57,21 +57,19 @@ public class MonkeyFirefighter : PlaceableObj
     {
         fire.receiveDamage(attack);
     }
-
-    void rotate(Direction dir)
+    public void RandomRotate()
     {
-        this.dir = dir;
-        var rotationEular = getRotation(dir);
-        transform.eulerAngles = rotationEular;
+        dir = (Direction)Random.Range(0, 4);
     }
 
     protected override void Start()
     {
         base.Start();
     }
-    protected override void Update()
+
+    protected void Update()
     {
-        base.Update();
+        DeleteOffMap();
         timer += Time.deltaTime;
         if (timer >= attackSpeed)
         {
@@ -85,4 +83,16 @@ public class MonkeyFirefighter : PlaceableObj
             
         }
     }
+    
+    private void DeleteOffMap()
+    {
+        float cameraMin = GameManager.Instance.cam.ViewportToWorldPoint(new Vector3(0, 0, GameManager.Instance.cam.nearClipPlane)).x;
+        float threshold = cameraMin - GameManager.Instance.threshold;
+
+        if (this.transform.position.x > threshold)
+            return;
+        GameManager.Instance.grid.DeleteObject(transform.position);
+        GameObject.Destroy(this.gameObject);
+    }
+
 }
