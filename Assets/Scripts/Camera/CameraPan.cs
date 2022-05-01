@@ -10,6 +10,7 @@ public class CameraPan : MonoBehaviour
 
     public void StartPan()
     {
+
         _panCoroutine = StartCoroutine(Pan());
 
         IEnumerator Pan()

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public int gridHeight;
     public float gridCellSize;
     public Vector3 gridOrigin;
+    public GameObject floor;
     [field: Header("Unit Deletion data")]
     public float threshold;
     [field: Header("Fire spawning data")]
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
             Instance = this;
 
         grid = new Grid<PlaceableObj>(gridWidth, gridHeight, gridCellSize, gridOrigin, (Grid<PlaceableObj> g, int x, int y) => new PlaceableObj());
+        grid.generatefloor(floor);
+
         SpawnFires();
     }
 
