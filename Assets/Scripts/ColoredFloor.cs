@@ -21,4 +21,16 @@ public class ColoredFloor :PlaceableObj
             spriteRenderer.sprite = darkColor;
         }
     }
+
+    private void OnMouseEnter()
+    {
+        Debug.Log(spriteRenderer.color);
+        spriteRenderer.color = new Color32(64, 255, 64, 255);
+        Debug.Log(spriteRenderer.color);
+    }
+
+    private void OnMouseExit()
+    {
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+    }
 }
