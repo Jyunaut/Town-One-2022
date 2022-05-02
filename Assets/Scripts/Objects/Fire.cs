@@ -8,7 +8,7 @@ public class Fire : PlaceableObj, Damageable
     public int hp;
     public FireData data;
     HealthBar healthBar;
-    public AudioClip deathSFX;
+    public AudioSource deathSFX;
 
     private Animator animator;
     private Transform ObjectTransform;
@@ -57,17 +57,17 @@ public class Fire : PlaceableObj, Damageable
     {
         Debug.Log("you died");
         
+        deathSFX.Play();
+        healthBar.DestryInstance();
         StartCoroutine(playDeathAnimation());
 
-        Destroy(gameObject);
-        healthBar.DestryInstance();
         return;
     }
 
     private IEnumerator playDeathAnimation()
     {
         animator.Play("Death");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         Destroy(this.gameObject);
     }
 

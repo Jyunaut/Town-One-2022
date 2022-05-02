@@ -56,6 +56,8 @@ public class HealthBar : MonoBehaviour
 
     private Image GetGreenBar(float healthPerCent)
     {
+        if (UIInstance == null)
+            return null;
         var child1 = UIInstance.transform.GetChild(0);
         if (child1 != null)
         {

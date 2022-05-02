@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraPan : MonoBehaviour
 {
     [SerializeField, Range(0f, 30f)] private float _panSpeed;
+    [SerializeField] private float _slowPoint;
 
     private Coroutine _panCoroutine;
 
@@ -26,7 +27,10 @@ public class CameraPan : MonoBehaviour
         {
             while (true)
             {
-                transform.position = new Vector3(transform.position.x + _panSpeed * Time.deltaTime, transform.position.y);
+                if (transform.position.x > _slowPoint)
+                    transform.position = new Vector3(transform.position.x + _panSpeed * Time.deltaTime / 2f, transform.position.y);
+                else
+                    transform.position = new Vector3(transform.position.x + _panSpeed * Time.deltaTime, transform.position.y);
                 yield return null;
             }
         }
