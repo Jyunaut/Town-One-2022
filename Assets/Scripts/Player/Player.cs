@@ -23,7 +23,11 @@ public class Player : MonoBehaviour
     private void Update()
     {
         Debug.Log(doAction);
-        doAction();
+        if(doAction != null)
+        {
+            doAction();
+        }
+        
     }
     public void SetWait()
     {
