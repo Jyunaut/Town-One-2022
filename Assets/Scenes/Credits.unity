@@ -973,8 +973,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62, y: -53}
-  m_SizeDelta: {x: 448.9, y: 450.7}
+  m_AnchoredPosition: {x: 59.37, y: 32.83}
+  m_SizeDelta: {x: 443.63, y: 279.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1042477424
 MonoBehaviour:
@@ -1011,7 +1011,7 @@ MonoBehaviour:
     m_LineSpacing: 0.6
   m_Text: 'Font - OpenDyslexic3
 
-    
+
 
     This Is War (Menu music)
 
@@ -1020,18 +1020,18 @@ MonoBehaviour:
     Pixabay
     License
 
-    
+
 
     Forest jungle nature dark Atmo (Forest sounds)
 
-    By
-    szegvari
+    By szegvari
 
     CC0
 
-    
 
-    Water Click (Monkey placement)
+
+    Water
+    Click (Monkey placement)
 
     By Mafon2
 
@@ -1721,8 +1721,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 212}
-  m_SizeDelta: {x: 360, y: 500}
+  m_AnchoredPosition: {x: 0, y: 200.75}
+  m_SizeDelta: {x: 360, y: 522.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1487704963
 MonoBehaviour:
@@ -2021,8 +2021,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 115}
-  m_SizeDelta: {x: 364.86, y: 274}
+  m_AnchoredPosition: {x: 0, y: 103.74999}
+  m_SizeDelta: {x: 364.86, y: 296.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884196181
 MonoBehaviour:
@@ -2179,7 +2179,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 174}
-  m_SizeDelta: {x: 328.1, y: 100}
+  m_SizeDelta: {x: 332.24, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1944730016
 MonoBehaviour:
