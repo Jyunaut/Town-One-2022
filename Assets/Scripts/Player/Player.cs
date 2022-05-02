@@ -9,12 +9,16 @@ public class Player : MonoBehaviour
     private float timer;
     private float endTimer;
     private Action doAction;
+    public GameObject textObj;
 
     private void Start()
     {
         timer = 0f;
         endTimer = 0.2f;
         queue = this.GetComponent<MonkeyQueue>();
+
+        updateBanana();
+        
     }
     private void Update()
     {
@@ -48,8 +52,30 @@ public class Player : MonoBehaviour
             if (!GameManager.Instance.grid.GetObject(Worldpos2D) && GameManager.Instance.grid.IsValidXY(Worldpos2D) && GameManager.Instance.checkGridWithinRange(x))
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
-                queue.SpawnMonkey(spawnPos);
+                if (GameManager.Instance.bananas > 0)
+                {
+                    queue.SpawnMonkey(spawnPos);
+                    GameManager.Instance.bananas -= 1;
+                    updateBanana();
+                }
+                
+            }
+            else
+            {
+                var obj = GameManager.Instance.grid.GetObject(Worldpos2D);
+                if (obj.GetComponent<Banana>())
+                {
+                    Destroy(obj.gameObject);
+                    GameManager.Instance.grid.SetObject(obj.position.x, obj.position.y, null);
+                    GameManager.Instance.bananas += 2;
+                    updateBanana();
+                }
             }
         }
     }
+
+    private void updateBanana()
+    {
+        textObj.GetComponent<UnityEngine.UI.Text>().text = GameManager.Instance.bananas.ToString();
+    }   
 }

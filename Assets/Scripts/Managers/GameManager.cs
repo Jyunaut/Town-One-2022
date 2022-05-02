@@ -24,7 +24,12 @@ public class GameManager : MonoBehaviour
     public PlaceableObj FirePrefab;
     public GameObject blueLine;
     public GameObject redLine;
-    
+
+    public GameObject bananaPrefab;
+
+    public int bananas = 5;
+
+    public int fireNum = 0;
 
     private void Awake()
     {
@@ -44,7 +49,7 @@ public class GameManager : MonoBehaviour
 
     private void SpawnFires()
     {
-        int easyLines = 5;
+        int easyLines = 3;
 
         System.Random rnd = new System.Random();
         for (int i=0; i < grid.width; i++)
@@ -53,34 +58,62 @@ public class GameManager : MonoBehaviour
             for(int j=0; j < grid.height; j++)
             {
                 int randNum = rnd.Next(100);
-                float posibility = Mathf.Clamp(((i-3)*0.5f / (float)grid.width) * 100.0f, 0f, 30.0f);
+                float posibility = Mathf.Clamp(((i - easyLines) * 0.5f / (float)grid.width) * 100.0f, 0f, 30.0f);
 
                 if (randNum < posibility)
                 {
                     
                     var fireInstance = Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Fire>();
-      
+                    fireNum += 1;
                     fireInstance.position = new Vector2Int(i, j);
                     grid.SetObject(i, j, fireInstance);
                 }
                 
             }
+
+            
         }
 
-        
+        //Bananas
+        for (int i = 0; i < grid.width; i++)
+        {
+
+            for (int j = 0; j < grid.height; j++)
+            {
+                int randNum = rnd.Next(100);
+                float posibility = Mathf.Clamp(((grid.width - i ) *0.8f / (float)grid.width) * 100.0f, 0f, 30.0f);
+
+                if (randNum < posibility)
+                {
+                    if (grid.GetObject(i, j) == null)
+                    {
+                        var bananaInstance = Instantiate(bananaPrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Banana>();
+
+                        bananaInstance.position = new Vector2Int(i, j);
+                        grid.SetObject(i, j, bananaInstance);
+                    }
+                    
+                }
+
+            }
 
 
-    //    if(min < 0 || max > gridWidth)
-    //        return;
+        }
 
-    //    for (int x = min; x < max; x++)
-    //    {
-    //        for (int y = 0; y < gridHeight; y++)
-    //        {
-    //            grid.SetObject(x, y, FirePrefab);
-    //            Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
-    //        }
-    //    }
+
+
+
+        //    if(min < 0 || max > gridWidth)
+        //        return;
+
+        //    for (int x = min; x < max; x++)
+        //    {
+        //        for (int y = 0; y < gridHeight; y++)
+        //        {
+        //            grid.SetObject(x, y, FirePrefab);
+        //            Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(x,y), Quaternion.identity);
+        //        }
+        //    }
     }
 
     public bool checkGridWithinRange(int x)
