@@ -2164,7 +2164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -15}
+  m_AnchoredPosition: {x: 108.3, y: -15}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &399220945
@@ -9314,6 +9314,8 @@ MonoBehaviour:
   FirePrefab: {fileID: 1896292023223387023, guid: b5fe63f4064404519800126c678d398a, type: 3}
   blueLine: {fileID: 1795605416}
   redLine: {fileID: 2071981135}
+  bananaPrefab: {fileID: 9070650271879356213, guid: e3d773a6ad64d4285adc863a760f9d51, type: 3}
+  bananas: 5
 --- !u!1 &1482144606
 GameObject:
   m_ObjectHideFlags: 0

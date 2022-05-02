@@ -25,7 +25,22 @@ public class Player : MonoBehaviour
             if (!GameManager.Instance.grid.GetObject(Worldpos2D) && GameManager.Instance.grid.IsValidXY(Worldpos2D) && GameManager.Instance.checkGridWithinRange(x))
             {
                 Vector3 spawnPos = GameManager.Instance.grid.GetCenterOfCell(Worldpos2D);
-                queue.SpawnMonkey(spawnPos);
+                if (GameManager.Instance.bananas > 0)
+                {
+                    queue.SpawnMonkey(spawnPos);
+                    GameManager.Instance.bananas -= 1;
+                }
+                
+            }
+            else
+            {
+                var obj = GameManager.Instance.grid.GetObject(Worldpos2D);
+                if (obj.GetComponent<Banana>())
+                {
+                    Destroy(obj.gameObject);
+                    GameManager.Instance.grid.SetObject(obj.position.x, obj.position.y, null);
+                    GameManager.Instance.bananas += 2;
+                }
             }
         }
     }
