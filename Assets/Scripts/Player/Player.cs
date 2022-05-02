@@ -9,12 +9,14 @@ public class Player : MonoBehaviour
     private float timer;
     private float endTimer;
     private Action doAction;
+    public GameObject textObj;
 
     private void Start()
     {
         timer = 0f;
         endTimer = 0.2f;
         queue = this.GetComponent<MonkeyQueue>();
+        
     }
     private void Update()
     {
@@ -52,6 +54,7 @@ public class Player : MonoBehaviour
                 {
                     queue.SpawnMonkey(spawnPos);
                     GameManager.Instance.bananas -= 1;
+                    updateBanana();
                 }
                 
             }
@@ -63,8 +66,14 @@ public class Player : MonoBehaviour
                     Destroy(obj.gameObject);
                     GameManager.Instance.grid.SetObject(obj.position.x, obj.position.y, null);
                     GameManager.Instance.bananas += 2;
+                    updateBanana();
                 }
             }
         }
     }
+
+    private void updateBanana()
+    {
+        textObj.GetComponent<UnityEngine.UI.Text>().text = GameManager.Instance.bananas.ToString();
+    }   
 }

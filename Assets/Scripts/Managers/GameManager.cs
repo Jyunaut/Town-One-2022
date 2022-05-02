@@ -28,7 +28,8 @@ public class GameManager : MonoBehaviour
     public GameObject bananaPrefab;
 
     public int bananas = 5;
-    
+
+    public int fireNum = 0;
 
     private void Awake()
     {
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
                 {
                     
                     var fireInstance = Instantiate(FirePrefab.gameObject, grid.GetCenterOfCell(i, j), Quaternion.identity).GetComponent<Fire>();
-      
+                    fireNum += 1;
                     fireInstance.position = new Vector2Int(i, j);
                     grid.SetObject(i, j, fireInstance);
                 }
