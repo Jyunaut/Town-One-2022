@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
         timer = 0f;
         endTimer = 0.2f;
         queue = this.GetComponent<MonkeyQueue>();
+
+        updateBanana();
         
     }
     private void Update()
